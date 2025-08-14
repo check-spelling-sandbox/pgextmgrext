@@ -5,7 +5,7 @@ use anyhow::Result;
 use crate::config::WorkspaceConfig;
 use crate::CmdInit;
 
-/// Initialze the workspace
+/// Initialize the workspace
 pub fn cmd_init(cmd: CmdInit) -> Result<()> {
   println!("pg_config: {}", cmd.pg_config);
   println!("pg_data: {}", cmd.pg_data);
