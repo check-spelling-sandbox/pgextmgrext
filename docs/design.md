@@ -73,8 +73,8 @@ This is the case where an extension cannot be successfully installed to Postgres
 #### Erroneous Results
 This is the case where two extensions can be installed together but doing so results in crashing the program or producing erroneous results because they are using a same hook. To detect incompatibility associated with erroneous results, we can generate SQLs that covers code path of the extension based on the existing test cases for the extension. If extensions behave differently in different environments with the same set of SQL queries, then they cannot exist at the same time. This type of conflict is possible to be automatically detected by extending tools like [SQLSmith](https://github.com/anse1/sqlsmith) and [Squirrel](https://github.com/s3team/Squirrel).
 
-#### Unintented Behavior
-This is the case where two extensions are technically compatible with each other but doing so results in having unexpected results because they are using a same hook. For example, pg_hint_plan includes some parts of pg_stat_statements source code to ensure the plan hints (part of the SQL comments) are properly stored in the statistics table. To detect incompatibility associated with unintented behavior, we can first apply the same strategy as for erroneous results, but then we will have to manually review all extensions to determine which category they belong.
+#### Unintended Behavior
+This is the case where two extensions are technically compatible with each other but doing so results in having unexpected results because they are using a same hook. For example, pg_hint_plan includes some parts of pg_stat_statements source code to ensure the plan hints (part of the SQL comments) are properly stored in the statistics table. To detect incompatibility associated with unintended behavior, we can first apply the same strategy as for erroneous results, but then we will have to manually review all extensions to determine which category they belong.
 
 
 ## Testing Plan
