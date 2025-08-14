@@ -22,7 +22,7 @@ The Postgres extension installer (pgext) tool helps user build and install exten
 To install an extension, the installer will read the extension download URL from the plugindb config file, which
 decides how to install the extension (i.e., by calling `CREATE EXTENSION` or add to `shared_preload_library`). The installer automatically detects the PGXS Makefile in the extension source code, compiles it, and installs it to our Postgres instance.
 
-To collect information in the system, the installer will install our homemade extensions: `pgx_show_hooks` and `pgx_trace_hooks`. `pgx_show_hooks` adds a return set function to the system to collect the value of the function pointers of the hooks, so as to determine which hooks are used by the currently-installed extensions. `pgx_trace_hooks` will log all information when a hook is called, so that the installer can analyze the information to determine compability.
+To collect information in the system, the installer will install our homemade extensions: `pgx_show_hooks` and `pgx_trace_hooks`. `pgx_show_hooks` adds a return set function to the system to collect the value of the function pointers of the hooks, so as to determine which hooks are used by the currently-installed extensions. `pgx_trace_hooks` will log all information when a hook is called, so that the installer can analyze the information to determine compatibility.
 
 ### Extension Framework
 
