@@ -7,7 +7,7 @@ use crate::plugin::{InstallStrategy, Plugin};
 
 /// An extension test controller trait
 pub trait ExtTestControl {
-  /// Connect to an postgres database for testing
+  /// Connect to a postgres database for testing
   fn connect_test_db() -> Result<Client>;
   /// Handle extensions already installed in the database before testing
   fn handle_installed<F: Fn(String)>(&mut self, println: F) -> Result<()>;
